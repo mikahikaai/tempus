@@ -20,13 +20,16 @@
 </head>
 
 <body>
-
-    <input id="datetimepicker" type="text">
-    <input id="datetimepicker2" type="text">
-    <button onclick="hitungSelisih()">Hitung Selisih Jam</button>
-    <p id="hasil"></p>
-
-
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <input id="datetimepicker" type="text">
+                <input id="datetimepicker2" type="text">
+                <button onclick="hitungSelisih()">Hitung Selisih Jam</button>
+                <p id="hasil"></p>
+            </div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
@@ -34,6 +37,7 @@
 </html>
 
 <script>
+
     const tanggal1 = document.getElementById("datetimepicker");
     const tanggal2 = document.getElementById("datetimepicker2");
 
@@ -100,6 +104,12 @@
             },
             theme: 'auto'
         }
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Setel ulang nilai picker saat halaman dimuat
+        datetimepicker.dates.clear();
+        datetimepicker2.dates.clear();
     });
 
     // const linkedPicker1Element = document.getElementById('datetimepicker');
